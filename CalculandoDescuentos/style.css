@@ -1,0 +1,93 @@
+:root {
+  --Color-white: #ffffff;
+  --Color-Black: #0f0f0f;
+  --Color-Grey: #ffffff0e;
+  --Color-Blue: #073a99;
+  --Color-Light-Blue: #0f4bb9;
+  --Border-radius: 5px;
+
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--Color-Black);
+}
+h1{
+  margin: 0;
+}
+p{
+  margin: 0;
+}
+
+.contenedorCalculadorDescuento{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem auto;
+}
+.calculadorDescuento{
+  width: 350px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Color-Blue);
+  color: var(--Color-white);
+  border-radius: var(--Border-radius);
+
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.calculadorDescuento input{
+  border: 2px solid var(--Color-Light-Blue);
+  background-color: transparent;
+  color: var(--Color-white);
+  border-radius: var(--Border-radius);
+  height: 30px;
+}
+.calculadorDescuento button{
+  background-color: transparent;
+  border: 2px solid var(--Color-Light-Blue);
+  padding: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color .2s;
+  border-radius: var(--Border-radius);
+  color: var(--Color-white);
+}
+.calculadorDescuento button:hover{
+  background-color: var(--Color-Light-Blue);
+}
+
+.totales{
+  display: grid;
+  width: 80%;
+  margin-top: 5rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.resultado{
+  position: relative;
+  width: 250px;
+  height: 150px;
+  background-color: var(--Color-Grey);
+  color: var(--Color-white);
+  border-radius: var(--Border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  padding: .5rem;
+}
+.resultado img{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+}
