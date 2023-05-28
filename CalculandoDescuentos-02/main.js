@@ -9,10 +9,10 @@ function calcularDescuento(){
   const descuento = Number(inputDescuento.value);
   const precioFinal = (precio*(100 - descuento)/100);
 
-  if(precio !== 0 && descuento !== 0){
+  if(precio !== 0 && descuento !== 0 && descuento < 100 ){
   renderizarPrecioFinal(precio, descuento, precioFinal);
-  inputPrecio.value = ''
-  inputDescuento.value = ''
+  inputPrecio.value = '';
+  inputDescuento.value = '';
   }  
 }
 
@@ -35,14 +35,14 @@ function renderizarPrecioFinal(precio, descuento, total){
   parrafoPrecioTotal.classList.add('total');
 
   const imgCerrar = document.createElement('img');
-  imgCerrar.setAttribute('src', './img/close-circle.svg')
+  imgCerrar.setAttribute('src', 'img/close-circle-svgrepo-com.svg');
   imgCerrar.addEventListener('click', cerraPrecio);
 
   document.querySelector('.totales').appendChild(divResultado);
   divResultado.append(divDatos, imgCerrar);
-  divDatos.append(parrafoPrecio, parrafoDescuento, parrafoPrecioTotal)
+  divDatos.append(parrafoPrecio, parrafoDescuento, parrafoPrecioTotal);
 }
 
 function cerraPrecio(event){
-  event.target.parentNode.remove()
+  event.target.parentNode.remove();
 }

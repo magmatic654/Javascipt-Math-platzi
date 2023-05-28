@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Tienda Online: Productos electrónicos</title>
+</head>
+<body>
+  <nav class="navBar">
+    <div class="contenedorNavbar">
+      <h1 class="tituloTienda">Tienda Online</h1>
+      <div class="contenedorHref">
+        <div class="navHref">
+          <a href="#">Inicio</a>
+        </div>
+        <div class="navHref">
+          <a href="#">Productos</a>
+        </div>
+        <div class="navHref">
+          <a href="#">Más información</a>
+        </div>
+      </div>
+    </div>
+    <div class="carritoIcon">
+      <img src="img/cart-svgrepo-com.svg" alt="carrito">
+    </div>
+  </nav>
+  <aside class="carritoDetalles inactive">
+    <div class="contenedorCarrito">
+      <p class="carritoTitulo">Resumen</p>
+      <div class="productos">
+        <div class="productoCarrito">
+          <img class="imagenProductoCarrito" src="img/iphoneVenta.webp" alt="producto">
+          <div class="detallesCarrito">
+            <p>Iphone XII</p>
+            <p>Cantidad: 1</p>
+            <p>Precio: $1000</p>
+          </div>
+          <img class="eliminarProducto" src="img/close-circle-svgrepo-com.svg" alt="Eliminar">
+        </div>
+        <div class="productoCarrito">
+          <img class="imagenProductoCarrito" src="img/iphoneVenta.webp" alt="producto">
+          <div class="detallesCarrito">
+            <p>Iphone XII</p>
+            <p>Cantidad: 1</p>
+            <p>Precio: $1000</p>
+          </div>
+          <img class="eliminarProducto" src="img/close-circle-svgrepo-com.svg" alt="Eliminar">
+        </div>
+        <div class="productoCarrito">
+          <img class="imagenProductoCarrito" src="img/iphoneVenta.webp" alt="producto">
+          <div class="detallesCarrito">
+            <p>Iphone XII</p>
+            <p>Cantidad: 1</p>
+            <p>Precio: $1000</p>
+          </div>
+          <img class="eliminarProducto" src="img/close-circle-svgrepo-com.svg" alt="Eliminar">
+        </div>
+      </div>
+      <div class="cupones">
+        <label for="cupon">Codigo:</label>
+        <input type="text" placeholder="CUPON" id="cupon">
+        <button class="aplicarCupon">Aplicar</button>
+      </div>
+      <p class="totalCarrito">Subtotal: $<span id="valorCarrito">1000</p></p>
+      <button class="btnComprar">Pedir</button>
+    </div>
+  </aside>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -9,12 +9,13 @@
 </head>
 <body>
   <div class="contenedorCalculadorDescuento">
+      <h1>Product Store</h1>
     <div class="calculadorDescuento">
-      <h1>Calculador de descuento</h1>
+      
       <form>
         <div class="input">
-          <input id="precio" type="text" placeholder="Costo total">
-          <input id="descuento" type="text" placeholder="Descuento %">
+          <input id="precio" type="number" min="0" placeholder="Costo total">
+          <input id="descuento" type="number" min="0" placeholder="Descuento %">
         </div>
         <button id="calcularDescuento" type="button">Calcular</button>
       </form>

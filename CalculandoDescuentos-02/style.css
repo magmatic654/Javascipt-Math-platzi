@@ -1,15 +1,17 @@
 :root {
   --Color-white: #ffffff;
-  --Color-Black: #0f0f0f;
-  --Color-Grey: #ffffff0e;
-  --Color-Blue: #073a99;
-  --Color-Light-Blue: #0f4bb9;
+  --Color-Black: #000000;
+  --Color-Grey: #eeeeee;
+  --Color-Blue: #1c6bff;
+  --Color-Light-Blue: #4b8aff;
+  --Color-Dark-Blue: #004cd8;
   --Border-radius: 5px;
 
 }
 body{
   font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--Color-Black);
+  background-color: var(--Color-Grey);
+  color: var(--Color-Black);
 }
 h1{
   margin: 0;
@@ -23,6 +25,7 @@ p{
   flex-direction: column;
   align-items: center;
   margin: 5rem auto;
+
 }
 .calculadorDescuento{
   width: 350px;
@@ -76,8 +79,8 @@ form{
   position: relative;
   width: 250px;
   height: 150px;
-  background-color: var(--Color-Grey);
-  color: var(--Color-white);
+  background-color: var(--Color-white);
+  color: var(--Color-Black);
   border-radius: var(--Border-radius);
   display: flex;
   align-items: center;
@@ -90,4 +93,5 @@ form{
   top: 0;
   right: 0;
   width: 50px;
+  cursor: pointer;
 }

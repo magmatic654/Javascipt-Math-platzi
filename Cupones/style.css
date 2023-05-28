@@ -1,0 +1,157 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+h1, h2, h3, h4, p{
+  margin: 0;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+nav h1, .navHref a{
+  color: #ffffff;
+}
+
+.inactive{
+  display: none;
+}
+.navBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 80px;
+  background-color: #ffbc41;
+}
+.contenedorNavbar{
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+.contenedorHref{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 auto;
+  height: 100%;
+}
+.navHref a:hover{
+  color: #ff2828;
+}
+.carritoIcon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.carritoIcon img{
+  width: 30px;
+  cursor: pointer;
+  margin-right: 100px;
+}
+
+/* Carrito */
+.carritoDetalles{
+  position: absolute;
+  right: 100px;
+  width: 400px;
+  max-height: 900px;
+  box-shadow: 0 5px 5px 0 hsla(0, 0%, 0%, 0.15);
+}
+.contenedorCarrito{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.carritoTitulo{
+  text-align: center;
+  font-size: 25px;
+  margin: 1rem 0;
+}
+.productos{
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+  height: 400px;
+  width: 100%;
+  overflow-x: auto;
+}
+.productoCarrito{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 150px;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+.productoCarrito:last-of-type{
+  border-bottom: none;
+}
+.imagenProductoCarrito{
+  height: 100%;
+}
+.eliminarProducto{
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.btnComprar{
+  bottom:5px;
+  border: none;
+  background-color: #ffbc41;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%;
+  padding: 1rem;
+  transition: background-color 0.2s
+}
+.btnComprar:hover{
+  background-color: #f1aa25;
+}
+
+.detallesCarrito{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+  /* cupon */
+  .cupones{
+    margin: 1.5rem;
+  }
+  #cupon{
+    width: 150px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid;
+  }
+  #cupon:focus-visible{
+    outline: 0;
+  }
+  .aplicarCupon{
+    border: none;
+    background-color: #ffbc41;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    width: 100px;
+    padding: .5rem;
+    transition: background-color 0.2s
+  }
+  .aplicarCupon:hover{
+    background-color: #f1aa25;
+  }
+  .totalCarrito{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 20px;
+  }
