@@ -24,20 +24,24 @@ function eliminarProducto(event){
 }
 
 const arrayCupones = [
-  {nombre: '1OFF', descuento: 10},
-  {nombre: '2OFF', descuento: 20},
-  {nombre: '3OFF', descuento: 30},
-  {nombre: '4OFF', descuento: 40},
+  {'1OFF': 10},
+  {'2OFF': 20},
+  {'3OFF': 30},
+  {'4OFF': 40},
 ];
 
 
 AplicarCupon.addEventListener('click', comprobarCupon);
 
 function comprobarCupon(){
-  arrayCupones.forEach(cupon=>{
-    if(inputCupon.value === cupon.nombre){
-      const nuevoPrecio = (precioCarrito*(100-cupon.descuento)/100)
-      valorCarrito.textContent = nuevoPrecio
+  for (const cupon of arrayCupones) {
+    console.log(cupon)
+    for (const [clave, valor] of Object.entries(cupon)) {
+      if(inputCupon.value === clave){
+        const precioCondescuento = (precioCarrito*(100-valor)/100)
+        valorCarrito.textContent = precioCondescuento;
+        return precioCondescuento;
+      }
     }
-  })
+  }
 }
