@@ -47,21 +47,37 @@ function eliminarProducto(event){
 //   '40OFF': 40,
 // };
 
+//Manera 4
+const couponList = [];
+couponList.push({
+  name: '1OFF',
+  discount: 10,
+})
+couponList.push({
+  name: '2OFF',
+  discount: 20,
+})
+couponList.push({
+  name: '3OFF',
+  discount: 30,
+})
+couponList.push({
+  name: '4OFF',
+  discount: 40,
+})
 
 
 AplicarCupon.addEventListener('click', comprobarCupon);
 
 function comprobarCupon() {
-  
+    let discount;
     const precio = Number(precioCarrito);
     const cuponValue = inputCupon.value;
   
   ////////////////////////////////////// Manera 1
   // arrayCupones.forEach(cupon =>{
   //   if(cuponValue === cupon.nombre){
-  //     const precioCondescuento = (precioCarrito*(100-cupon.descuento)/100)
-  //       valorCarrito.textContent = precioCondescuento;
-  //       return precioCondescuento;
+  //     discount = (precioCarrito*(100-cupon.descuento)/100):
   //   }
   // });
   ////////////////////////////////////// Manera 2
@@ -69,17 +85,28 @@ function comprobarCupon() {
   //   // console.log(cuponValue)
   //   for (const [clave, valor] of Object.entries(cuponValue)) {
   //     if(inputCupon.value === clave){
-  //       const precioCondescuento = (precioCarrito*(100-valor)/100)
-  //       valorCarrito.textContent = precioCondescuento;
-  //       return precioCondescuento;
+  //       discount = (precioCarrito*(100-valor)/100)
   //     }
   //   }
   // }
   //////////////////////////////////////// Manera 3
   // if (objetoCupones[cuponValue]) {
-  //   const precioCondescuento = (precio*(100-objetoCupones[cuponValue])/100)
-  //       valorCarrito.textContent = precioCondescuento;
+  //   discount = (precio*(100-objetoCupones[cuponValue])/100)
   // } 
+
+  //////////////////////////////////////// Manera 4
+//   function findCoupon(couponElement){
+//     return couponElement.name === cuponValue;
+//   }
+//   const couponInArray = couponList.find(findCoupon);
+//   if(couponInArray){
+//     discount = couponInArray.discount;
+//   }
+
+if(discount){
+  const newPrice = (precio*(100-discount)/100);
+  valorCarrito.textContent = newPrice;
+}
 }
 
 
