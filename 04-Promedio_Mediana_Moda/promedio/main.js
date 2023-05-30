@@ -1,9 +1,9 @@
 // Solucion con html y js
-// const inputAgregarNumeros = document.querySelector('#inputAgregarNumero')
-// const btnAgregarNumero = document.querySelector('#btnAgregarNumero');
-// const btnPromediarNumeros = document.querySelector('#btnPromediarNumeros');
-// const listaNumeros = document.querySelector('.listaNumeros')
-// const promedioNumeros = document.querySelector('.promedioNumeros')
+const inputAgregarNumeros = document.querySelector('#inputAgregarNumero')
+const btnAgregarNumero = document.querySelector('#btnAgregarNumero');
+const btnPromediarNumeros = document.querySelector('#btnPromediarNumeros');
+const listaNumeros = document.querySelector('.listaNumeros')
+const promedioNumeros = document.querySelector('.promedioNumeros')
 
 // let arrayNumeros = [];
 
