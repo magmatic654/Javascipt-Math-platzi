@@ -37,7 +37,7 @@ p{
 }
 .contenedorNavbar{
   display: flex;
-  gap: 100px;
+  gap: 10%;
   align-items: center;
 }
 .contenedorHref{
@@ -166,5 +166,22 @@ p{
     }
     .productos{
       height: 65%;
+    }
+    .navBar{
+      justify-content: space-around;
+      height: auto;
+    }
+    .contenedorNavbar{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .contenedorHref{
+      flex-direction: column;
+      padding: 2rem;
+    }
+    .carritoIcon img{
+      margin-right: 0;
     }
   }

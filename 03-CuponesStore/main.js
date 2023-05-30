@@ -95,13 +95,13 @@ function comprobarCupon() {
   // } 
 
   //////////////////////////////////////// Manera 4
-//   function findCoupon(couponElement){
-//     return couponElement.name === cuponValue;
-//   }
-//   const couponInArray = couponList.find(findCoupon);
-//   if(couponInArray){
-//     discount = couponInArray.discount;
-//   }
+  function findCoupon(couponElement){
+    return couponElement.name === cuponValue;
+  }
+  const couponInArray = couponList.find(findCoupon);
+  if(couponInArray){
+    discount = couponInArray.discount;
+  }
 
 if(discount){
   const newPrice = (precio*(100-discount)/100);
