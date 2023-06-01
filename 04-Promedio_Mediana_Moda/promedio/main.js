@@ -1,9 +1,9 @@
-// Solucion con html y js
-const inputAgregarNumeros = document.querySelector('#inputAgregarNumero')
-const btnAgregarNumero = document.querySelector('#btnAgregarNumero');
-const btnPromediarNumeros = document.querySelector('#btnPromediarNumeros');
-const listaNumeros = document.querySelector('.listaNumeros')
-const promedioNumeros = document.querySelector('.promedioNumeros')
+// // Solucion con html y js
+// const inputAgregarNumeros = document.querySelector('#inputAgregarNumero')
+// const btnAgregarNumero = document.querySelector('#btnAgregarNumero');
+// const btnPromediarNumeros = document.querySelector('#btnPromediarNumeros');
+// const listaNumeros = document.querySelector('.listaNumeros')
+// const promedioNumeros = document.querySelector('.promedioNumeros')
 
 // let arrayNumeros = [];
 
@@ -40,9 +40,9 @@ const promedioNumeros = document.querySelector('.promedioNumeros')
 ////Solucion Video con .reduce()
 function calcularPromedio(lista){
 
-//   function sumarTodosLosElementos(valorAcumulado, nuevoValor){
-//     return valorAcumulado += nuevoValor;
-//   }
+  // function sumarTodosLosElementos(valorAcumulado, nuevoValor){
+  //   return valorAcumulado += nuevoValor;
+  // }
 
 const sumarTodosLosElementos = (a, b)=> a += b;
 
