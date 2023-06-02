@@ -84,12 +84,13 @@ function medianaEmpresa(nombreEmpresa, year){
 function proyeccionEmpresa(nombreEmpresa){
   const salariosEmpresa = {};
   const arraySalarios = [];
+  salariosEmpresa.salariosHistorial = [];
 
   for(year in empresas[nombreEmpresa]){
     salariosEmpresa[year] = [];
-    
       for(salario of empresas[nombreEmpresa][year]){
       salariosEmpresa[year].push(salario)
+      salariosEmpresa.salariosHistorial.push(salario)
     }
     salariosEmpresa[year] = PlatziMath.calcularMediana(salariosEmpresa[year])
     arraySalarios.push(salariosEmpresa[year])
@@ -110,13 +111,17 @@ function proyeccionEmpresa(nombreEmpresa){
     salariosEmpresa.diferenciaSalarios.push(diferenciaSalarios);
     salariosEmpresa.diferenciaSalariosPorcentaje.push(porcentajeDiferencia);
   }
-
   salariosEmpresa.medianaSalarioPorcentaje = PlatziMath.calcularMediana(salariosEmpresa.diferenciaSalariosPorcentaje);
   const ultimoAño = arraySalarios[arraySalarios.length-1];
   const medianaSalarioPorcentaje = salariosEmpresa.medianaSalarioPorcentaje
   const diferenciaSalario = ultimoAño * medianaSalarioPorcentaje;
   const proyeccion = diferenciaSalario + ultimoAño;
-  
-  salariosEmpresa.proyeccion = proyeccion
+  const salariosHistorial = salariosEmpresa.salariosHistorial;
+  const salarioMaximo = PlatziMath.ordenarListaInversa(salariosHistorial)[0];
+  const salarioMinimo = PlatziMath.ordenarLista(salariosHistorial)[0];
+  salariosEmpresa.salarioMaximo = salarioMaximo;
+  salariosEmpresa.salarioMinimo = salarioMinimo;
+  salariosEmpresa.proyeccion = proyeccion;
+
   return salariosEmpresa;
 }

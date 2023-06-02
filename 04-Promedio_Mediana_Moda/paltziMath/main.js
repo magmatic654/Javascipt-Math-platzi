@@ -48,9 +48,9 @@ const sumarTodosLosElementos = (a, b)=> a += b;
   const promedio = sumalista / lista.length;
   return promedio;
 }
-PlatziMath.ordenarLista = function ordenarLista(lista, i = 0){
-  return [...lista].sort((a,b)=>a[i]-b[i]);
+PlatziMath.ordenarLista = function ordenarLista(lista){
+  return [...lista].sort((a,b)=>a-b);
 } 
 PlatziMath.ordenarListaInversa = function ordenarListaInversa(lista, i = 0){
-  return [...lista].sort((a,b)=>b[i]-a[i]);
+  return [...lista].sort((a,b)=>b-a);
 } 
