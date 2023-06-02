@@ -66,12 +66,57 @@ for(persona of salarios){
   }
 }
 
-console.log(empresas.Freelance)
+console.log(empresas)
 
 function medianaEmpresa(nombreEmpresa, year){
-  if(empresas[nombreEmpresa][year]){
+  
+  if(!empresas[nombreEmpresa]){
+    return 'La empresa no existe';
+  }else if(!empresas[nombreEmpresa][year]){
+    return 'No existe historial de ese año';
+  }else{
     const arraySalarios = empresas[nombreEmpresa][year];
     const medianaSalarios = PlatziMath.calcularMediana(arraySalarios);
     return medianaSalarios
   }
+}
+
+function proyeccionEmpresa(nombreEmpresa){
+  const salariosEmpresa = {};
+  const arraySalarios = [];
+
+  for(year in empresas[nombreEmpresa]){
+    salariosEmpresa[year] = [];
+    
+      for(salario of empresas[nombreEmpresa][year]){
+      salariosEmpresa[year].push(salario)
+    }
+    salariosEmpresa[year] = PlatziMath.calcularMediana(salariosEmpresa[year])
+    arraySalarios.push(salariosEmpresa[year])
+  }
+
+  const salariosPorAnhioMediana = Object.values(salariosEmpresa);
+  const medianaAnhiosEmpresa = PlatziMath.calcularMediana(salariosPorAnhioMediana);
+  
+  salariosEmpresa.medianaDeSalarios = medianaAnhiosEmpresa;
+  salariosEmpresa.diferenciaSalarios = [];
+  salariosEmpresa.diferenciaSalariosPorcentaje = [];
+
+  for(let i = 1; i<salariosPorAnhioMediana.length;i++){
+    const salarioPasado = salariosPorAnhioMediana[i-1];
+    const salarioActual = salariosPorAnhioMediana[i];
+    const diferenciaSalarios = salarioActual - salarioPasado;
+    const porcentajeDiferencia = (diferenciaSalarios /salarioPasado);
+    salariosEmpresa.diferenciaSalarios.push(diferenciaSalarios);
+    salariosEmpresa.diferenciaSalariosPorcentaje.push(porcentajeDiferencia);
+  }
+
+  salariosEmpresa.medianaSalarioPorcentaje = PlatziMath.calcularMediana(salariosEmpresa.diferenciaSalariosPorcentaje);
+  const ultimoAño = arraySalarios[arraySalarios.length-1];
+  const medianaSalarioPorcentaje = salariosEmpresa.medianaSalarioPorcentaje
+  const diferenciaSalario = ultimoAño * medianaSalarioPorcentaje;
+  const proyeccion = diferenciaSalario + ultimoAño;
+  
+  salariosEmpresa.proyeccion = proyeccion
+  return salariosEmpresa;
 }
