@@ -7,11 +7,11 @@
 const PlatziMath = {};
 
 
-PlatziMath.esPar = function esPar(number){
-  return number % 2 === 0
+PlatziMath.esPar = function esPar(lista){
+  return lista.length % 2 === 0
 }
-PlatziMath.esImpar = function esImpar(number){
-  return number % 2 !== 0
+PlatziMath.esImpar = function esImpar(lista){
+  return lista.length % 2 !== 0
 }
 PlatziMath.calcularModa = function calcularModa(lista){
   const listaCount = {};
@@ -32,25 +32,36 @@ PlatziMath.calcularModa = function calcularModa(lista){
 PlatziMath.calcularMediana = function calcularMediana(lista){
   //Acomoda los numeros de menor a mayor
   const listaOrdenada = PlatziMath.ordenarLista(lista)
-  if(PlatziMath.esPar(lista)){
-    const inicioListaPar = listaOrdenada[(listaOrdenada.length/2)-1];
-    const finalListaPar = listaOrdenada[(listaOrdenada.length/2)];
-    const promedioListaPar = (listaOrdenada[inicioListaPar]+listaOrdenada[finalListaPar])/2;
-    return promedioListaPar;
+
+  const listaEsPar = this.esPar(listaOrdenada)
+  if(listaEsPar){
+    const mitad1ListaPar = listaOrdenada[(listaOrdenada.length/2)-1];
+    const mitad2ListaPar = listaOrdenada[listaOrdenada.length/2];
+    const listaMitades = [];
+    listaMitades.push(mitad1ListaPar);
+    listaMitades.push(mitad2ListaPar);
+    const medianaListaPar = this.calcularPromedio(listaMitades);
+    return medianaListaPar;
   }else{
-    const medioListaPar = Math.floor(listaOrdenada.length/2); 
-    return listaOrdenada[medioListaPar];
+    const mitadListaImpar = Math.floor(listaOrdenada.length/2);
+    const medianaListaImpar = listaOrdenada[mitadListaImpar]
+    return medianaListaImpar;
   }
 }
 PlatziMath.calcularPromedio = function calcularPromedio(lista){
-const sumarTodosLosElementos = (a, b)=> a += b;
+const sumarTodosLosElementos = (a, b)=> a + b;
   const sumalista = lista.reduce(sumarTodosLosElementos)
   const promedio = sumalista / lista.length;
   return promedio;
 }
 PlatziMath.ordenarLista = function ordenarLista(lista){
-  return [...lista].sort((a,b)=>a-b);
+  return lista.sort((a,b)=>a-b);
 } 
-PlatziMath.ordenarListaInversa = function ordenarListaInversa(lista, i = 0){
+PlatziMath.ordenarListaInversa = function ordenarListaInversa(lista){
   return [...lista].sort((a,b)=>b-a);
 } 
+PlatziMath.ordenarListaBidimensional = function ordenarListaBidimensional(listaDesordenada, i) {
+  function ordenarListaSort(valorAcumulado, nuevoValor) {
+    return valorAcumulado[i] - nuevoValor[i];
+  }
+}
